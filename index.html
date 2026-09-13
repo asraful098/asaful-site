@@ -1,0 +1,1160 @@
+html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Asraful | AI/ML Developer</title>
+
+    <meta
+      name="description"
+      content="Sheikh Md Asraful Islam Robin — AI/ML Student & Developer building intelligent solutions with Machine Learning, Deep Learning and AI."
+    />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+      }
+
+      :root {
+        --bg: #070b14;
+        --bg2: #0d1321;
+        --card: rgba(255, 255, 255, 0.045);
+        --border: rgba(255, 255, 255, 0.09);
+        --text: #f5f7fb;
+        --muted: #a8b0c0;
+        --primary: #7c5cff;
+        --secondary: #00d9ff;
+        --success: #42e6a4;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background:
+          radial-gradient(
+            circle at 10% 10%,
+            rgba(124, 92, 255, 0.15),
+            transparent 30%
+          ),
+          radial-gradient(
+            circle at 90% 20%,
+            rgba(0, 217, 255, 0.1),
+            transparent 25%
+          ),
+          var(--bg);
+        color: var(--text);
+        line-height: 1.7;
+        overflow-x: hidden;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .container {
+        width: min(1120px, 92%);
+        margin: auto;
+      }
+
+      /* NAVBAR */
+
+      header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        background: rgba(7, 11, 20, 0.72);
+        backdrop-filter: blur(18px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      nav {
+        height: 75px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo {
+        font-size: 1.35rem;
+        font-weight: 800;
+        letter-spacing: -0.5px;
+      }
+
+      .logo span {
+        color: var(--secondary);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 28px;
+        list-style: none;
+      }
+
+      .nav-links a {
+        color: var(--muted);
+        font-size: 0.92rem;
+        transition: 0.3s;
+      }
+
+      .nav-links a:hover {
+        color: white;
+      }
+
+      .menu-btn {
+        display: none;
+        font-size: 1.4rem;
+        cursor: pointer;
+      }
+
+      /* HERO */
+
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding-top: 80px;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 70px;
+        align-items: center;
+      }
+
+      .available {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 7px 13px;
+        border: 1px solid rgba(66, 230, 164, 0.25);
+        background: rgba(66, 230, 164, 0.07);
+        border-radius: 999px;
+        color: var(--success);
+        font-size: 0.82rem;
+        margin-bottom: 20px;
+      }
+
+      .dot {
+        width: 8px;
+        height: 8px;
+        background: var(--success);
+        border-radius: 50%;
+        box-shadow: 0 0 12px var(--success);
+      }
+
+      h1 {
+        font-size: clamp(3rem, 7vw, 5.6rem);
+        line-height: 1.02;
+        letter-spacing: -4px;
+        margin-bottom: 20px;
+      }
+
+      .gradient {
+        background: linear-gradient(90deg, var(--primary), var(--secondary));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .hero-text {
+        color: var(--muted);
+        font-size: 1.08rem;
+        max-width: 650px;
+        margin-bottom: 30px;
+      }
+
+      .buttons {
+        display: flex;
+        gap: 13px;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        padding: 12px 19px;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 0.92rem;
+        transition: 0.3s;
+        border: 1px solid var(--border);
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, var(--primary), #5b7cff);
+        border: none;
+      }
+
+      .btn-secondary {
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      .btn:hover {
+        transform: translateY(-3px);
+      }
+
+      /* CODE CARD */
+
+      .code-card {
+        background: rgba(10, 16, 29, 0.85);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 25px 80px rgba(0, 0, 0, 0.35);
+        transform: rotate(2deg);
+      }
+
+      .code-top {
+        height: 42px;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        padding: 0 15px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .circle {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #777;
+      }
+
+      .code {
+        padding: 25px;
+        font-family: monospace;
+        color: #c8d0df;
+        font-size: 0.88rem;
+      }
+
+      .purple {
+        color: #b995ff;
+      }
+      .blue {
+        color: #69d8ff;
+      }
+      .green {
+        color: #68e8ad;
+      }
+      .orange {
+        color: #ffbd70;
+      }
+
+      /* SECTION */
+
+      section {
+        padding: 100px 0;
+      }
+
+      .section-title {
+        margin-bottom: 45px;
+      }
+
+      .eyebrow {
+        color: var(--secondary);
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 8px;
+      }
+
+      .section-title h2 {
+        font-size: clamp(2rem, 5vw, 3rem);
+        letter-spacing: -1.5px;
+      }
+
+      .section-title p {
+        color: var(--muted);
+        margin-top: 10px;
+        max-width: 650px;
+      }
+
+      /* ABOUT */
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 35px;
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 28px;
+        transition: 0.3s;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        border-color: rgba(124, 92, 255, 0.35);
+      }
+
+      .card p {
+        color: var(--muted);
+      }
+
+      .facts {
+        display: grid;
+        gap: 15px;
+      }
+
+      .fact {
+        padding: 18px;
+        border-radius: 13px;
+        background: rgba(255, 255, 255, 0.035);
+        border: 1px solid var(--border);
+      }
+
+      .fact strong {
+        display: block;
+        margin-bottom: 3px;
+      }
+
+      .fact span {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      /* SKILLS */
+
+      .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .skill {
+        padding: 11px 16px;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.035);
+        border-radius: 10px;
+        color: #dfe5f1;
+        transition: 0.3s;
+      }
+
+      .skill:hover {
+        border-color: var(--secondary);
+        transform: translateY(-3px);
+      }
+
+      .skill i {
+        margin-right: 7px;
+        color: var(--secondary);
+      }
+
+      /* PROJECTS */
+
+      .projects {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+      }
+
+      .project {
+        display: flex;
+        flex-direction: column;
+        min-height: 330px;
+      }
+
+      .project-number {
+        color: var(--secondary);
+        font-weight: 800;
+        font-size: 0.85rem;
+        margin-bottom: 18px;
+      }
+
+      .project h3 {
+        font-size: 1.4rem;
+        margin-bottom: 12px;
+      }
+
+      .project p {
+        flex: 1;
+        color: var(--muted);
+        font-size: 0.93rem;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 18px 0;
+      }
+
+      .tag {
+        font-size: 0.75rem;
+        padding: 5px 9px;
+        background: rgba(124, 92, 255, 0.12);
+        color: #c8bcff;
+        border-radius: 6px;
+      }
+
+      .project-links {
+        display: flex;
+        gap: 18px;
+        font-size: 0.85rem;
+        font-weight: 600;
+      }
+
+      .project-links a:hover {
+        color: var(--secondary);
+      }
+
+      /* EDUCATION */
+
+      .timeline {
+        border-left: 1px solid var(--border);
+        padding-left: 28px;
+      }
+
+      .timeline-item {
+        position: relative;
+        margin-bottom: 35px;
+      }
+
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background: var(--secondary);
+        border-radius: 50%;
+        left: -34px;
+        top: 8px;
+        box-shadow: 0 0 15px rgba(0, 217, 255, 0.5);
+      }
+
+      .timeline-item h3 {
+        margin-bottom: 4px;
+      }
+
+      .timeline-item .date {
+        color: var(--secondary);
+        font-size: 0.82rem;
+        margin-bottom: 7px;
+      }
+
+      .timeline-item p {
+        color: var(--muted);
+      }
+
+      /* GOALS */
+
+      .goals {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+
+      .goal i {
+        font-size: 1.8rem;
+        color: var(--secondary);
+        margin-bottom: 15px;
+      }
+
+      .goal h3 {
+        margin-bottom: 8px;
+      }
+
+      .goal p {
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+
+      /* CONTACT */
+
+      .contact-box {
+        text-align: center;
+        padding: 65px 30px;
+        background:
+          radial-gradient(
+            circle at 50% 0%,
+            rgba(124, 92, 255, 0.18),
+            transparent 45%
+          ),
+          var(--card);
+        border: 1px solid var(--border);
+        border-radius: 22px;
+      }
+
+      .contact-box h2 {
+        font-size: clamp(2rem, 5vw, 3.2rem);
+        margin-bottom: 12px;
+      }
+
+      .contact-box p {
+        color: var(--muted);
+        max-width: 600px;
+        margin: auto auto 25px;
+      }
+
+      .socials {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 25px;
+      }
+
+      .social {
+        width: 45px;
+        height: 45px;
+        display: grid;
+        place-items: center;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        color: var(--muted);
+        transition: 0.3s;
+      }
+
+      .social:hover {
+        color: white;
+        border-color: var(--secondary);
+        transform: translateY(-3px);
+      }
+
+      footer {
+        padding: 30px 0;
+        text-align: center;
+        color: #737b8d;
+        font-size: 0.82rem;
+        border-top: 1px solid var(--border);
+      }
+
+      /* MOBILE */
+
+      @media (max-width: 800px) {
+        .nav-links {
+          position: absolute;
+          top: 75px;
+          left: 0;
+          width: 100%;
+          display: none;
+          flex-direction: column;
+          padding: 25px;
+          background: #090e18;
+          border-bottom: 1px solid var(--border);
+        }
+
+        .nav-links.active {
+          display: flex;
+        }
+
+        .menu-btn {
+          display: block;
+        }
+
+        .hero-grid,
+        .about-grid,
+        .projects {
+          grid-template-columns: 1fr;
+        }
+
+        .hero {
+          padding-top: 120px;
+        }
+
+        .code-card {
+          transform: none;
+        }
+
+        .goals {
+          grid-template-columns: 1fr;
+        }
+
+        h1 {
+          letter-spacing: -2px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+
+    <header>
+      <div class="container">
+        <nav>
+          <a href="#home" class="logo"> Asraful<span>.</span> </a>
+
+          <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+
+          <div class="menu-btn" id="menuBtn">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO -->
+
+    <main>
+      <section class="hero" id="home">
+        <div class="container hero-grid">
+          <div>
+            <div class="available">
+              <span class="dot"></span>
+              Open to learning & opportunities
+            </div>
+
+            <h1>
+              Hi, I'm<br />
+              <span class="gradient">Asraful.</span>
+            </h1>
+
+            <p class="hero-text">
+              AI/ML Student & Developer passionate about building intelligent
+              solutions with Machine Learning, Deep Learning and Artificial
+              Intelligence.
+            </p>
+
+            <div class="buttons">
+              <a href="#projects" class="btn btn-primary">
+                <i class="fa-solid fa-code"></i>
+                View Projects
+              </a>
+
+              <a href="#contact" class="btn btn-secondary"> Contact Me </a>
+
+              <!-- Replace CV link -->
+              <a href="YOUR-CV-LINK-HERE" class="btn btn-secondary">
+                <i class="fa-solid fa-file-arrow-down"></i>
+                Download CV
+              </a>
+            </div>
+          </div>
+
+          <div class="code-card">
+            <div class="code-top">
+              <span class="circle"></span>
+              <span class="circle"></span>
+              <span class="circle"></span>
+            </div>
+
+            <div class="code">
+              <pre><span class="purple">class</span> <span class="blue">AIEngineer</span>:
+
+    <span class="purple">def</span> <span class="green">__init__</span>(self):
+
+        self.name =
+            <span class="orange">"Asraful"</span>
+
+        self.focus =
+            <span class="orange">"Artificial Intelligence"</span>
+
+        self.skills = [
+            <span class="orange">"Python"</span>,
+            <span class="orange">"Machine Learning"</span>,
+            <span class="orange">"Deep Learning"</span>,
+            <span class="orange">"Computer Vision"</span>,
+            <span class="orange">"NLP"</span>
+        ]
+
+        self.goal =
+            <span class="orange">"Build Intelligent Systems"</span></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+
+      <section id="about">
+        <div class="container">
+          <div class="section-title">
+            <div class="eyebrow">01 — About</div>
+            <h2>Who I Am</h2>
+          </div>
+
+          <div class="about-grid">
+            <div class="card">
+              <p>
+                I'm Sheikh Md Asraful Islam Robin, an AI/ML student and
+                developer from Bangladesh. I'm interested in Artificial
+                Intelligence, Machine Learning and Deep Learning.
+              </p>
+
+              <br />
+
+              <p>
+                My goal is to continuously improve my programming, mathematics
+                and machine learning skills while building practical projects
+                that solve real-world problems.
+              </p>
+
+              <br />
+
+              <p>
+                I'm currently exploring areas such as Computer Vision, Natural
+                Language Processing, Neural Networks and modern AI technologies.
+              </p>
+            </div>
+
+            <div class="facts">
+              <div class="fact">
+                <strong>Focus</strong>
+                <span>Artificial Intelligence & Machine Learning</span>
+              </div>
+
+              <div class="fact">
+                <strong>Primary Language</strong>
+                <span>Python</span>
+              </div>
+
+              <div class="fact">
+                <strong>Currently Learning</strong>
+                <span>ML, DL, NLP, Computer Vision & AI</span>
+              </div>
+
+              <div class="fact">
+                <strong>Goal</strong>
+                <span>Become a strong AI/ML Engineer</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+
+      <section id="skills">
+        <div class="container">
+          <div class="section-title">
+            <div class="eyebrow">02 — Toolkit</div>
+            <h2>Skills & Technologies</h2>
+            <p>
+              Technologies and tools I'm learning and using to build data-driven
+              and intelligent applications.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="skills">
+              <div class="skill">
+                <i class="fa-brands fa-python"></i>
+                Python
+              </div>
+
+              <div class="skill">
+                <i class="fa-solid fa-table"></i>
+                NumPy
+              </div>
+
+              <div class="skill">
+                <i class="fa-solid fa-database"></i>
+                Pandas
+              </div>
+
+              <div class="skill">
+                <i class="fa-solid fa-chart-line"></i>
+                Matplotlib
+              </div>
+
+              <div class="skill">
+                <i class="fa-solid fa-brain"></i>
+                Scikit-learn
+              </div>
+
+              <div class="skill">
+                <i class="fa-solid fa-network-wired"></i>
+                TensorFlow
+              </div>
+
+              <div class="skill">
+                <i class="fa-solid fa-fire"></i>
+                PyTorch
+              </div>
+
+              <div class="skill">
+                <i class="fa-solid fa-eye"></i>
+                Computer Vision
+              </div>
+
+              <div class="skill">
+                <i class="fa-solid fa-language"></i>
+                NLP
+              </div>
+
+              <div class="skill">
+                <i class="fa-solid fa-code"></i>
+                Git & GitHub
+              </div>
+
+              <div class="skill">
+                <i class="fa-solid fa-terminal"></i>
+                VS Code
+              </div>
+
+              <div class="skill">
+                <i class="fa-solid fa-cloud"></i>
+                Google Colab
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+
+      <section id="projects">
+        <div class="container">
+          <div class="section-title">
+            <div class="eyebrow">03 — Projects</div>
+
+            <h2>Selected Projects</h2>
+
+            <p>
+              A collection of machine learning and programming projects that
+              demonstrate my practical learning.
+            </p>
+          </div>
+
+          <div class="projects">
+            <!-- PROJECT 1 -->
+
+            <article class="card project">
+              <div class="project-number">PROJECT 01</div>
+
+              <h3>iPhone Price Prediction</h3>
+
+              <p>
+                A machine learning project that predicts iPhone prices based on
+                product-related features. The project includes data
+                preprocessing, feature engineering, model training and
+                evaluation.
+              </p>
+
+              <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">Pandas</span>
+                <span class="tag">Scikit-learn</span>
+                <span class="tag">Regression</span>
+              </div>
+
+              <div class="project-links">
+                <!-- Replace links -->
+
+                <a href="YOUR-GITHUB-LINK" target="_blank">
+                  <i class="fa-brands fa-github"></i>
+                  GitHub
+                </a>
+
+                <a href="YOUR-LIVE-DEMO-LINK" target="_blank">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  Live Demo
+                </a>
+              </div>
+            </article>
+
+            <!-- PROJECT 2 -->
+
+            <article class="card project">
+              <div class="project-number">PROJECT 02</div>
+
+              <h3>MNIST Digit Classifier</h3>
+
+              <p>
+                An image classification project focused on recognizing
+                handwritten digits using neural networks and deep learning
+                techniques.
+              </p>
+
+              <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">TensorFlow</span>
+                <span class="tag">Keras</span>
+                <span class="tag">Deep Learning</span>
+              </div>
+
+              <div class="project-links">
+                <a href="YOUR-GITHUB-LINK" target="_blank">
+                  <i class="fa-brands fa-github"></i>
+                  GitHub
+                </a>
+
+                <a href="YOUR-LIVE-DEMO-LINK" target="_blank">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  Demo
+                </a>
+              </div>
+            </article>
+
+            <!-- PROJECT 3 -->
+
+            <article class="card project">
+              <div class="project-number">PROJECT 03</div>
+
+              <h3>Customer Segmentation</h3>
+
+              <p>
+                A clustering project using customer data to discover meaningful
+                groups and understand customer behavior through unsupervised
+                learning.
+              </p>
+
+              <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">Pandas</span>
+                <span class="tag">K-Means</span>
+                <span class="tag">Data Analysis</span>
+              </div>
+
+              <div class="project-links">
+                <a href="YOUR-GITHUB-LINK" target="_blank">
+                  <i class="fa-brands fa-github"></i>
+                  GitHub
+                </a>
+
+                <a href="YOUR-LIVE-DEMO-LINK" target="_blank">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  Demo
+                </a>
+              </div>
+            </article>
+
+            <!-- PROJECT 4 -->
+
+            <article class="card project">
+              <div class="project-number">PROJECT 04</div>
+
+              <h3>Machine Learning Experiments</h3>
+
+              <p>
+                A collection of experiments covering Logistic Regression, KNN,
+                SVM, Random Forest, XGBoost, PCA, model evaluation and
+                hyperparameter tuning.
+              </p>
+
+              <div class="tags">
+                <span class="tag">Scikit-learn</span>
+                <span class="tag">XGBoost</span>
+                <span class="tag">PCA</span>
+                <span class="tag">ML</span>
+              </div>
+
+              <div class="project-links">
+                <a href="YOUR-GITHUB-LINK" target="_blank">
+                  <i class="fa-brands fa-github"></i>
+                  GitHub
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- EDUCATION -->
+
+      <section id="education">
+        <div class="container">
+          <div class="section-title">
+            <div class="eyebrow">04 — Journey</div>
+
+            <h2>Education & Learning</h2>
+          </div>
+
+          <div class="card">
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="date">CURRENT</div>
+
+                <h3>Higher Secondary Education — Science</h3>
+
+                <p>
+                  Building strong foundations in Mathematics, Physics, Chemistry
+                  and Computer Science while developing programming and AI/ML
+                  skills.
+                </p>
+              </div>
+
+              <div class="timeline-item">
+                <div class="date">AI / ML JOURNEY</div>
+
+                <h3>Machine Learning & Artificial Intelligence</h3>
+
+                <p>
+                  Learning Python, Mathematics for Machine Learning, Data
+                  Analysis, Classical ML, Deep Learning, Computer Vision and NLP
+                  through practical projects.
+                </p>
+              </div>
+
+              <div class="timeline-item">
+                <div class="date">NEXT GOAL</div>
+
+                <h3>BSc in Computer Science / Artificial Intelligence</h3>
+
+                <p>
+                  Planning to pursue higher education in Computer Science,
+                  Artificial Intelligence or a related field.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- GOALS -->
+
+      <section>
+        <div class="container">
+          <div class="section-title">
+            <div class="eyebrow">05 — Vision</div>
+
+            <h2>What I'm Working Toward</h2>
+          </div>
+
+          <div class="goals">
+            <div class="card goal">
+              <i class="fa-solid fa-brain"></i>
+
+              <h3>AI Engineering</h3>
+
+              <p>
+                Develop strong foundations in AI, Machine Learning and Deep
+                Learning and build useful intelligent systems.
+              </p>
+            </div>
+
+            <div class="card goal">
+              <i class="fa-solid fa-flask"></i>
+
+              <h3>Research</h3>
+
+              <p>
+                Explore modern AI research, neural networks, transformers and
+                emerging AI technologies.
+              </p>
+            </div>
+
+            <div class="card goal">
+              <i class="fa-solid fa-rocket"></i>
+
+              <h3>Real-World Projects</h3>
+
+              <p>
+                Turn machine learning knowledge into practical products and
+                applications that solve real-world problems.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+
+      <section id="contact">
+        <div class="container">
+          <div class="contact-box">
+            <div class="eyebrow">06 — Contact</div>
+
+            <h2>Let's Build Something Intelligent.</h2>
+
+            <p>
+              I'm always interested in learning, collaborating on interesting
+              projects and connecting with people working in technology and AI.
+            </p>
+
+            <!-- Change email -->
+
+            <a href="mailto:YOUR-EMAIL@example.com" class="btn btn-primary">
+              <i class="fa-solid fa-envelope"></i>
+              Get In Touch
+            </a>
+
+            <div class="socials">
+              <!-- Replace your links -->
+
+              <a
+                class="social"
+                href="https://github.com/asraful098"
+                target="_blank"
+                aria-label="GitHub"
+              >
+                <i class="fa-brands fa-github"></i>
+              </a>
+
+              <a
+                class="social"
+                href="https://www.linkedin.com/in/sheikh-asraful-b59524373/"
+                target="_blank"
+                aria-label="LinkedIn"
+              >
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+
+              <a
+                class="social"
+                href="YOUR-KAGGLE-LINK"
+                target="_blank"
+                aria-label="Kaggle"
+              >
+                <i class="fa-brands fa-kaggle"></i>
+              </a>
+
+              <a
+                class="social"
+                href="sheikhasraful700@gmail.com"
+                aria-label="Email"
+              >
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer>
+      <div class="container">
+        © 2026 Sheikh Md Asraful Islam Robin. Built with curiosity & code.
+      </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+      const menuBtn = document.getElementById("menuBtn");
+      const navLinks = document.getElementById("navLinks");
+
+      menuBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("active");
+        });
+      });
+    </script>
+  </body>
+</html>
